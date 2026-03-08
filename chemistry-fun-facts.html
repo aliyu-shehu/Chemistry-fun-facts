@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chemistry Fun Facts</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { margin: 20px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; }
+        .collapsible { background-color: #2c3e50; color: white; cursor: pointer; padding: 10px; border: none; text-align: left; outline: none; font-size: 15px; border-radius: 5px; }
+        .active, .collapsible:hover { background-color: #34495e; }
+        .content { padding: 0 18px; display: none; overflow: hidden; background-color: #f9f9f9; }
+    </style>
 </head>
 <body>
-    <h1>Advanced Chemistry Fun Facts</h1>
-    <p>Chemistry plays a vital role in solving many real-world problems. Here are some fun facts that highlight the importance of chemistry:</p>
-    <ul>
-        <li><strong>Green Chemistry:</strong> Techniques developed in green chemistry aim to reduce hazardous substances in chemical processes, making them more environmentally friendly.</li>
-        <li><strong>The Role of Catalysts:</strong> Catalysts speed up chemical reactions without being consumed, leading to more efficient industrial processes and reduced energy consumption.</li>
-        <li><strong>Water Purification:</strong> The use of chemical processes helps in purifying water, making it safe for drinking, particularly in regions affected by natural disasters.</li>
-        <li><strong>Batteries and Renewable Energy:</strong> Advances in chemistry have led to the development of more efficient batteries, essential for renewable energy storage, thus aiding in the transition to sustainable energy sources.</li>
-        <li><strong>Pharmaceutical Developments:</strong> Chemistry has enabled the development of new medicines that can tackle various diseases, improving public health worldwide.</li>
-    </ul>
-    <footer>
-        <p>Last updated: 2026-03-08 08:36:20 UTC</p>
-    </footer>
+    <div class="container">
+        <h1>Chemistry Fun Facts</h1>
+        <p>Welcome to the amazing world of chemistry! Here are some fun facts:</p>
+        <button class="collapsible">Fact 1: Water is the only substance that is found naturally in three forms: solid, liquid, and gas.</button>
+        <div class="content"><p>Indeed, water can exist as ice (solid), liquid water, and steam (gas) under normal conditions on Earth.</p></div>
+        <button class="collapsible">Fact 2: Helium is the second most abundant element in the universe.</button>
+        <div class="content"><p>After hydrogen, helium makes up about 24% of the universe’s mass.</p></div>
+        <button class="collapsible">Fact 3: The chemical symbol for gold is Au, which is derived from the Latin word for gold, 'aurum'.</button>
+        <div class="content"><p>This is why gold is often associated with the term "auriferous" or "gold-bearing".</p></div>
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
